@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observable 1</title>
+    <script type="text/javascript" src="https://unpkg.com/rxjs@%5E7/dist/bundles/rxjs.umd.min.js"></script>
+</head>
+
+<body>
+    <input type="text" id="text" value="">
+    <p id="parrafo" value=""></p>
+    <script type="text/javascript">
+        const {Observable,fromEvent,map }= rxjs;
+
+        function reverseString(str) {
+            return str.split("").reverse().join("");
+        }
+
+        const text= document.getElementById('text');
+        const parrafo= document.getElementById('parrafo');
+
+        const obs= new Observable((observable)=>{
+            let espejo;
+            text.addEventListener('keyup',(event)=>{
+                var inputText = event.path[0].value;
+                console.log(inputText);
+                if(text.value=='error')
+                {   observable.error('Error');
+                    text.disabled= true;
+                    text.value= '';
+                    parrafo.innerText= '';
+                }
+                
+                if(text.value=='complete')
+                {   observable.error('Completado');
+                    text.disabled= true;
+                    text.value= '';
+                    parrafo.innerText= '';
+                }
+                
+                if(event.key == null){
+                    mirror= parrafo.innerHTML.substring(1)
+                }else{
+                    mirror= reverseString(parrafo.innerHTML);
+                    mirror+= event.key;
+                    mirror= reverseString(mirror);
+                }
+                observable.next(mirror)
+            })
+        })
+        const handler = {
+            next:(value)=> parrafo.innerHTML= value,
+            complete:(value)=> console.log(`COMPLETE=> ${value}`),
+            error:(value)=> console.log(`ERROR=> ${value}`),
+        };
+
+        const sub= obs.subscribe(handler)
+
+        setTimeout(() => {
+            console.log("Proceso terminado");
+            text.disabled = true;
+            text.value = '';
+            parrafo.innerText = '';
+            sub.unsubscribe();
+        },10000)
+    </script>
+</body>
+</html>
