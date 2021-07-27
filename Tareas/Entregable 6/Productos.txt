@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Remera Luna Love",
+    "price": 700,
+    "thumbnail": "https://bit.ly/3eWLZQV",
+    "id": 1
+  },
+  {
+    "title": "Pollera Abyss",
+    "price": 2250,
+    "thumbnail": "https://bit.ly/3zNMnJN",
+    "id": 2
+  },
+  {
+    "title": "Choker Black-Pink",
+    "price": 450,
+    "thumbnail": "https://bit.ly/3BDkd5R",
+    "id": 3
+  },
+  {
+    "title": "Bucaneras gatito",
+    "price": 600,
+    "thumbnail": "https://bit.ly/3eV1HfD",
+    "id": 4
+  }
+]
