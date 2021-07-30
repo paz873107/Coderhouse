@@ -5,7 +5,7 @@ import {productos} from "./class.js";
 // Inicializo el servidor
 
 const app=express();
-const port=8030;
+const port=8080;
 const server=app.listen(port,()=>console.log("Servidor escuchando en el puerto",port));
 
 server.on("error",(err)=>{
