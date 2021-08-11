@@ -1,0 +1,38 @@
+<form action='/api/productos/guardar' method='post'>
+	<h2 class='text-center mb-4 text-light'>Ingrese producto</h2>
+	<div class='form-floating mb-3'>
+		<input
+			type='text'
+			class='form-control'
+			id='title'
+			name='title'
+			placeholder='title'
+		/>
+		<label for='title'>Titulo del producto</label>
+	</div>
+	<div class='form-floating mb-3'>
+		<input
+			type='number'
+			class='form-control'
+			id='price'
+			name='price'
+			placeholder='price'
+		/>
+		<label for='price'>Precio</label>
+	</div>
+	<div class='form-floating mb-3'>
+		<input
+			type='text'
+			class='form-control'
+			id='thumbnail'
+			name='thumbnail'
+			placeholder='price'
+		/>
+		<label for='thumbnail'>URL de la imagen</label>
+	</div>
+	<button class='btn btn-dark' type='submit'>
+		Ingresar producto
+	</button>
+
+	<a href='/api/' class='btn btn-dark'>Volver al inicio</a>
+</form>
