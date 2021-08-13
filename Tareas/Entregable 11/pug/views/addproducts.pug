@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+    form(action='/api/productos/guardar' method='post')
+        h2(class='text-center mb-4 text-light') Ingrese producto
+        div(class='form-floating mb-3')
+            input#title(type='text' class='form-control' name='title' placeholder='title')
+            label(for='title') Titulo del producto
+        div(class='form-floating mb-3')
+            input#price(type='number' class='form-control' name='price' placeholder='price')
+            label(for='price') Precio
+        div(class='form-floating mb-3')
+            input#thumbnail(type='text' class='form-control' name='thumbnail' placeholder='price')
+            label(for='thumbnail') URL de la imagen
+        button(class='btn btn-dark me-2' type='submit') Ingresar producto
+        a(href='/api/' class='btn btn-dark') Volver al inicio

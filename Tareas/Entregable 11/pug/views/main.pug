@@ -1,0 +1,8 @@
+extends layout.pug
+
+block content
+    div(class='d-flex flex-column justify-content-center align-items-center')
+        h1(class='text-center mb-4 text-light') Bienvenido a la API de Productos
+        div
+            a(href='/api/productos/vista' class='btn btn-dark me-2') LISTADO DE PRODUCTOS
+            a(href='/api/productos/agregar' class='btn btn-dark') AGREGAR PRODUCTO

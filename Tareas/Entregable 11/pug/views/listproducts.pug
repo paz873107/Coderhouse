@@ -1,0 +1,23 @@
+extends layout.pug
+
+block content
+    div(class='container')
+        h2(class='text-center mb-4 text-light') Vista de productos
+        if productExists
+            table(class='table table-info')
+                thead
+                    tr
+                        th(scope='col') Producto
+                        th(scope='col') Precio
+                        th(scope='col') Foto
+                tbody
+                each product in products
+                    tr
+                        td #{product.title}
+                        td #{product.price}
+                        td
+                            img(style='width: 50px; height: auto' src=product.thumbnail alt='products')
+        else
+            div(class='alert alert-info' role='alert') No hay productos disponibles, agrega uno haciendo click 
+                a(href='/api/productos/agregar' class='alert-link') aqui
+        a(href='/api/' class='btn btn-dark') Volver al inicio

@@ -1,0 +1,43 @@
+<%- include('../partials/index.ejs'); %>
+<body>
+	<div
+		style="height: 100vh"
+		class="d-flex justify-content-center align-items-center bg-success"
+	>
+		<div class="container">
+			<h2 class="text-center mb-4 text-light">Vista de productos</h2>
+			<% if(productExists) { %>
+			<table class="table table-info">
+				<thead>
+					<tr>
+						<th scope="col">Producto</th>
+						<th scope="col">Precio</th>
+						<th scope="col">Foto</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% products.forEach(product => { %>
+					<tr>
+						<td><%= product.title %></td>
+						<td><%= product.price %></td>
+						<td>
+							<img
+								style="width: 50px; height: auto"
+								src=<%= product.thumbnail %>
+                                alt="products"
+							/>
+						</td>
+					</tr>
+					<% }) %>
+				</tbody>
+			</table>
+			<% } else { %>
+			<div class="alert alert-info" role="alert">
+				No hay productos disponibles, agrega uno haciendo click
+				<a href="/api/productos/agregar" class="alert-link">aqui</a>
+			</div>
+			<% } %>
+			<a href="/api/" class="btn btn-dark">Volver al inicio</a>
+		</div>
+	</div>
+</body>
