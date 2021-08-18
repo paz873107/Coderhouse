@@ -1,0 +1,52 @@
+<h1 class='text-center mb-4 text-light'>Bienvenido a la API de Productos</h1>
+<hr style='background-color:white; width:80%' />
+<form id='form'>
+	<h2 class='text-center mb-4 text-light'>Ingrese producto</h2>
+	<div class='form-floating mb-3'>
+		<input
+			type='text'
+			class='form-control'
+			id='title'
+			name='title'
+			placeholder='title'
+		/>
+		<label for='title'>Titulo del producto</label>
+	</div>
+	<div class='form-floating mb-3'>
+		<input
+			type='number'
+			class='form-control'
+			id='price'
+			name='price'
+			placeholder='price'
+		/>
+		<label for='price'>Precio</label>
+	</div>
+	<div class='form-floating mb-3'>
+		<input
+			type='text'
+			class='form-control'
+			id='thumbnail'
+			name='thumbnail'
+			placeholder='price'
+		/>
+		<label for='thumbnail'>URL de la imagen</label>
+	</div>
+	<button class='btn btn-dark' type='submit'>
+		Ingresar producto
+	</button>
+</form>
+<hr style='background-color:white; width:80%' />
+<div class='container'>
+	<h2 class='text-center mb-4 text-light'>Vista de productos</h2>
+			<table class='table table-success'>
+			<thead>
+				<tr>
+					<th scope='col'>Producto</th>
+					<th scope='col'>Precio</th>
+					<th scope='col'>Foto</th>
+				</tr>
+			</thead>
+			<tbody id='products'></tbody>
+		</table>
+</div>
