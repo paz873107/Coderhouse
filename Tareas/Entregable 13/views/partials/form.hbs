@@ -1,0 +1,47 @@
+<div class='form-product'>
+  <form class='g-3' id='form-product' action='/api/guardar' method='post'>
+
+    <div class='input-group mb-3'>
+      <span class='input-group-text'>Producto</span>
+      <input
+        type='text'
+        id='title'
+        name='title'
+        class='form-control'
+        placeholder='Producto'
+        aria-label='Producto'
+      />
+    </div>
+
+    <div class='input-group mb-3'>
+      <span class='input-group-text'>$</span>
+      <input
+        type='number'
+        id='price'
+        name='price'
+        class='form-control'
+        placeholder='999.99'
+        aria-label='Precio'
+      />
+    </div>
+
+    <div class='input-group mb-3'>
+      <span class='input-group-text'>Thumbnail</span>
+      <input
+        type='text'
+        id='thumbnail'
+        name='thumbnail'
+        class='form-control'
+        placeholder='https://picsum.photos/'
+      />
+    </div>
+
+    <div>
+      <input type='hidden' name='form' value='true' />
+    </div>
+
+    <div class='col-12'>
+      <button class='btn btn-primary' type='submit'>Guardar</button>
+    </div>
+  </form>
+</div>

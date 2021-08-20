@@ -1,0 +1,25 @@
+{{#if mostrarForm}}
+  <div class='container mt-5'>
+    <div class='row justify-content-center'>
+      <div class='col-md-12 col-lg-6'>
+        {{> form}}
+        {{> list_prod}}
+      </div>
+
+      <div class='col-md-12 col-lg-6'>
+        {{> chat}}
+      </div>
+    </div>
+  </div>
+{{/if}}
+
+{{#if mostrarVista}}
+
+  <div class='container mt-5'>
+    <div class='row justify-content-center'>
+      <div class='col-md-12 col-lg-6'>
+        {{> visual}}
+      </div>
+    </div>
+  </div>
+{{/if}}
